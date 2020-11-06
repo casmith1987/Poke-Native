@@ -58,10 +58,12 @@ class Pokedex extends Component {
           <TextInput
             style={{
               height: 30,
-              width: 100,
+              width: 80,
               borderColor: 'gray',
               borderWidth: 1,
               marginBottom: 50,
+              backgroundColor: 'white',
+              textAlign: 'center',
             }}
             onChangeText={async (text) => {
               await this.setState({ ...this.state, text: text });
@@ -69,7 +71,7 @@ class Pokedex extends Component {
             }}
             keyboardType={'numeric'}
           />
-          <Text>Pokemon Does Not Exist.</Text>
+          <Text style={{ color: 'white' }}>Pokemon Does Not Exist.</Text>
         </View>
       );
     if (this.state.pokemon !== null) {
@@ -83,10 +85,12 @@ class Pokedex extends Component {
           <TextInput
             style={{
               height: 30,
-              width: 100,
+              width: 80,
               borderColor: 'gray',
               borderWidth: 1,
               marginBottom: 50,
+              backgroundColor: 'white',
+              textAlign: 'center',
             }}
             onChangeText={async (text) => {
               await this.setState({ ...this.state, text: text });
@@ -94,11 +98,14 @@ class Pokedex extends Component {
             }}
             keyboardType={'numeric'}
           />
-          <Text style={{ fontSize: 30 }}>
+          <Text style={{ fontSize: 30, color: 'white', fontFamily: 'Arial' }}>
             {this.state.pokemon.name[0].toUpperCase() +
               this.state.pokemon.name.slice(1)}
           </Text>
-          <Image source={image} style={{ height: 340, width: 340 }} />
+          <Image
+            source={image}
+            style={{ height: 340, width: 340, marginTop: 0 }}
+          />
           <Text></Text>
         </View>
       );
@@ -108,7 +115,6 @@ class Pokedex extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
